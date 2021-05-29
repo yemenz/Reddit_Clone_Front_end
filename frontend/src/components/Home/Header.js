@@ -2,12 +2,16 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
 import { Button } from "@material-ui/core";
+
 // import LoginApp from "../login/AppLogin";
 
 class Header extends React.Component {
  
   handleClick(){
     window.location=("/login");
+  }
+  handlePost(){
+    window.location=("/post")
   }
   render(){
   return (
@@ -25,6 +29,7 @@ class Header extends React.Component {
       </div>
 
       <div className="header__right">
+      <Link to="/post" onClick={this.handlePost}>Create Post</Link>
       <Link to="/login" >
         <Button variant="outlined" onClick={this.handleClick} color="secondary">Log In</Button>
       </Link>

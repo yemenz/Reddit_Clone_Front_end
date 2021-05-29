@@ -1,0 +1,13 @@
+ "dev": "react-scripts start",
+        "start": "serve -s build",
+        "build": "react-scripts build",
+        "heroku-postbuild": "npm run build"
+
+
+
+         "scripts": {
+        "dev": "react-scripts start",
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "heroku-postbuild": "npm run build"
+    }
