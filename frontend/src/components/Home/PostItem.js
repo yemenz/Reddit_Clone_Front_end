@@ -1,35 +1,33 @@
-import React from "react";
+  
+import React, { useEffect , useState } from 'react';
 import "./PostItem.css";
-import { Link } from "react-router-dom";
+import { fetchData } from '../../api';
 
-function PostItem(props) {
-  const { post } = props;
-  const title = post.title
-  const link = title.toLowerCase().replaceAll(" ", "-")
+function PostItem() {
+  const [fetchposts,setfetchposts]=useState([]);
+
+    useEffect(()=>{
+        const fetchpost=async ()=>
+        {
+            setfetchposts(await fetchData());
+        }
+        fetchpost();
+    },[])
+    console.log(fetchposts);
   return (
-    <div className="post">
-      <div className="post__left">
-        <i className="fas fa-caret-up"></i>
-        <span>{post.upvote}</span>
-        <i className="fas fa-caret-down"></i>
+    <div>
+        {fetchposts.map(posts=>(
+          <div className="post">
+         <div className="post__right">
+          <span>{posts.UserId}/</span>
+          <span>{posts.postId}</span>
+          <h3>{posts.postTitle}</h3>
+          <span className="post__info">
+            {posts.postDesc}
+          </span><button>Comment</button>
       </div>
-      <div className="post__center">
-        <img src={post.image} alt="" />
       </div>
-      <div className="post__right">
-        <h3><Link to={`/${post.subreddit}/${link}`}>{post.title} </Link></h3>
-        <span className="post__info">
-          submitted an hour ago by
-          <Link to={`/u/${post.user}`}> {post.user}</Link> to{" "}
-          <Link to={`/r/${post.subreddit}`}> {post.subreddit}</Link>
-        </span>
-        <p className="post__info">
-          <Link to={`/${post.subreddit}/${link}/comments`}>
-            {post.comments_count} comments
-          </Link>{" "}
-          | share | save | hide | report
-        </p>
-      </div>
+        ))}  
     </div>
   );
 }
