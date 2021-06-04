@@ -14,7 +14,8 @@ const post = () => {
          
 			<form>
 				<div className='addBlog__details'>
-					<h3 className="gg">Title:</h3>
+					<h3 className="gg">Title:
+			</h3>
 					<center><input type='text' className="kk" placeholder="e.g Reddit"/></center>
 <br></br>
 					<h3>Content:</h3>
