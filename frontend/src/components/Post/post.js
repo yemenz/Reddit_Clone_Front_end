@@ -14,17 +14,17 @@ const post = () => {
          
 			<form>
 				<div className='addBlog__details'>
-					<h3 className="gg">Title</h3>
-					<input type='text' placeholder="e.g Reddit"/>
-
-					<h3>Content</h3>
-					<textarea type='text' placeholder="Write here......"/>
+					<h3 className="gg">Title:</h3>
+					<center><input type='text' className="kk" placeholder="e.g Reddit"/></center>
+<br></br>
+					<h3>Content:</h3>
+					<center><textarea className="se" type='text' placeholder="Write here......"/></center>
 
 				</div>
 
-				<Button variant='contained' type='submit' color='primary'>
+				<center><Button variant='contained' type='submit' color='primary'>
 					Submit
-				</Button>
+				</Button></center>
 			</form>
 		</div>
       )

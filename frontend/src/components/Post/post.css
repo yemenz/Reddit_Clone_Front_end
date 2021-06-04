@@ -22,12 +22,24 @@
 
 .addBlog__details {
     margin-bottom: 5%;
+    background-color:#f2f2f2;
+     width: 600px;
+     height: auto;
+     border: 1px solid black;
+     border-radius: 4px;
+    padding: 50px;
+    margin: 20px;
 }
+.addBlog__details>.gg{
+   margin-left: -380px;
 
+}
 .addBlog__details>h3 {
+    margin-left: -350px;
     font-size: 17px;
     font-weight: 400;
     margin-bottom: 10px;
+    text-align: center;
 }
 
 .addBlog__details>input,
@@ -39,10 +51,18 @@
     margin-bottom: 10px;
 }
 
-.addBlog__details>textarea {
-    height: 100px;
-}
-
 .fa-check {
     font-size: 15px !important;
+}
+
+.kk{
+    width:400px;
+    height:30px;
+    border:1px solid white;
+}
+.se{
+    border:1px solid white;
+    border-radius: 4px ;
+    width:400px;
+    height:200px;
 }
