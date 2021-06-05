@@ -3,7 +3,7 @@ import "./App.css";
 
 import AppLogin from "./components/login/AppLogin";
 import AppHome from "./components/Home/App";
-import {post} from "./components/Post/post";
+import Post from "./components/Post/post";
 import { fetchData } from './api';
 
 // import { BrowserRouter as Router} from "react-router-dom";
@@ -22,7 +22,7 @@ class App extends React.Component {
       <Switch>
           <Route path="/login"  component={() => <AppLogin />} />
 
-          <Route  path="/post" component={post}/>
+          <Route  path="/post" component={()=><Post />}/>
           <Route path="/" exact component={() => <AppHome />} />
         </Switch>
         </Router>

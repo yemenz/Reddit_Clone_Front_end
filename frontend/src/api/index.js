@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url = "https://reddit-clone-backend-gb10.herokuapp.com";
+export const url = "https://reddit-clone-backend-gb10.herokuapp.com";
 
 export const fetchData = async() => {
     try {

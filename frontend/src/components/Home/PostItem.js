@@ -14,19 +14,25 @@ function PostItem() {
         fetchpost();
     },[])
     console.log(fetchposts);
+
+    
   return (
     <div>
         {fetchposts.map(posts=>(
           <div className="post">
-         <div className="post__right">
-          <span>{posts.UserId}/</span>
+            
+          <span >{posts.UserId}/</span>
+          {/* ballu_1 */}
           <span>{posts.postId}</span>
+          {/* 1 */}
           <h3>{posts.postTitle}</h3>
+          {/* ballu wala title */}
           <span className="post__info">
             {posts.postDesc}
-          </span><button>Comment</button>
+
+          </span><button onClick={this.handleclicko}>Comment</button>
       </div>
-      </div>
+      
         ))}  
     </div>
   );

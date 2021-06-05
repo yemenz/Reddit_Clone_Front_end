@@ -11,10 +11,11 @@ function App() {
   return (
     <div className="App container">
       <Router>
-        <SideNav />
+      
+      
         <Main>
-          <Header />
-          
+        <Header />
+        
           <Posts />
         </Main>
       </Router>

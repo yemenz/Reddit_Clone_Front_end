@@ -3,10 +3,44 @@ import  {logo}  from "../../images";
 import styles from "./register.module.css";
 import {Button} from "@material-ui/core";
 import {LockOpen} from '@material-ui/icons';
+import axios from "axios";
+import {url} from "../../api";
 export class Register extends React.Component {
   // constructor(props) {
   //   super(props);
   // }
+
+  state={
+    userid:"",
+    username:"",
+    password:"",
+    email:"",
+    dob:"",
+  }
+
+  
+  handlechangedata=e=>{
+   this.setState({[e.target.name]:e.target.value});
+  }
+  submitdata=(e)=>{
+    e.preventDefault();
+     const {userid,username,password,email,dob}=this.state;
+     alert(username);
+    var logindata={
+        "UserId":userid,
+        "userName":username,
+        "password":password,
+        "email":email,
+        "DOB":dob  
+    }
+    axios.post(`${url}/user/create/`,logindata)
+    .then(res=>{
+      console.log(res.data);
+    })
+    .catch(error=>{
+      console.log(error);
+    })
+  }
   
   render() {
     return (
@@ -16,36 +50,37 @@ export class Register extends React.Component {
           <div className={styles.image}>
             <img src={logo} alt="logo" className={styles.img} />
           </div>
-          <div className={styles.form}>
+          <form className={styles.form} onSubmit={this.submitdata}>
             <div className={styles.form_group}>
               <label htmlFor="userid" className={styles.label}>UserId</label>
-              <input type="text" name="userid" placeholder="eg:-example_1" className={styles.input} />
+              <input type="text" name="userid" placeholder="eg:-example_1" onChange={this.handlechangedata} className={styles.input} />
             </div>
             <div className={styles.form_group}>
               <label htmlFor="username" className={styles.label}>Username</label>
-              <input type="text" name="username" placeholder="eg: ken kaneki" className={styles.input} />
+              <input type="text" name="username" placeholder="eg: ken kaneki" onChange={this.handlechangedata} className={styles.input} />
             </div>
             <div className={styles.form_group}>
               <label htmlFor="password" className={styles.label}>Password</label>
-              <input type="password" name="password" placeholder="password" className={styles.input} />
+              <input type="password" name="password" placeholder="password" onChange={this.handlechangedata} className={styles.input} />
             </div>
             <div className={styles.form_group}>
               <label htmlFor="email" className={styles.label}>Email</label>
-              <input type="text" name="email" placeholder="examle:-example@xyz.com" className={styles.input} />
+              <input type="text" name="email" placeholder="examle:-example@xyz.com" onChange={this.handlechangedata} className={styles.input} />
             </div>
             <div className={styles.form_group}>
               <label htmlFor="dob" className={styles.label}>Date of birth</label>
-              <input type="date" name="dob" className={styles.input} />
+              <input type="date" name="dob" onChange={this.handlechangedata} className={styles.input} />
             </div>
-          </div>
-          
-        </div>
-        <Button
+            <Button type="submit"
         variant="contained"
         className={styles.button}
         color="secondary"
         endIcon={<LockOpen></LockOpen>}
         >Login</Button>
+          </form>
+          
+        </div>
+        
       </div>
     );
   }
