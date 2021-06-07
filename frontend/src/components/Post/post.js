@@ -22,12 +22,10 @@ class post extends React.Component {
 	  e.preventDefault();
 	   const {postTitle,postDesc}=this.state;
 	  var logindata={
-		
 			"postTitle":postTitle,
-			"postDesc":postDesc
-			
+			"postDesc":postDesc	
 	  }
-	  axios.post(`${url}/post/ballu_1/create`,logindata)
+	  axios.post(`${url}/post/jindi/create`,logindata)
 	  .then(res=>{
 		console.log(res.data);
 	  })
@@ -58,9 +56,9 @@ render(){
 
 				</div>
 
-				<Button variant='contained' type='submit' color='primary'>
+				<center><Button variant='contained' type='submit' color='primary'>
 					Submit
-				</Button>
+				</Button></center>
 			</form>
 		</div>
       )

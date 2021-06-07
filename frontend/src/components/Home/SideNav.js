@@ -1,6 +1,6 @@
 import React from "react";
 import "./SideNav.css";
-
+import {redditlogo} from "../../images/index";
 
 import { Link } from "react-router-dom";
 
@@ -36,7 +36,9 @@ function SideNav() {
   return (
     <div className="sidenav">
       
-
+      <div className="sidenav__logo">
+        <img alt="extra"src={redditlogo} />
+      </div>
       <div className="sidenav__search">
         <input type="text" name="search" placeholder="search" />
         <i className="fas fa-search"></i>

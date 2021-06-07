@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
 import { Button } from "@material-ui/core";
-import {redditlogo} from "../../images/index";
+
 
 class Header extends React.Component {
  
@@ -16,9 +16,7 @@ class Header extends React.Component {
   return (
     
     <div className="header">
-      <div className="sidenav__logo">
-        <img alt="extra"src={redditlogo} />
-      </div>
+      
       <div className="header__left">
         <ul>
           <Link to="/popular" className="active">Popular</Link>
