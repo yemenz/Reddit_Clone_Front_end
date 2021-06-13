@@ -18,35 +18,42 @@ export const fetchData = async() => {
     }
 }
 
-export const feathpostdata= async()=>{
+export const feathpostdata= async(id)=>{
     try{
-        const {data}=await axios.get(`${url}/post/1`)
-        console.log({data});
+        const {data}=await axios.get(`${url}/post/${id}`)
         return data;
 
     }catch (error) {
         console.log(error);
     }
 }
-// {
-//     "commentId": 6,
-//     "comment": "very nice",
-//     "TIMESTAMP": "12:32:02",
-//     "post": 5,
-//     "user": "ballu_1",
-//     "timestamp": "12:32:02"
-//   }
 
-export const fetchcommentData = async() => {
+
+export const fetchcommentData = async(id) => {
     try {
-        const { data}  = await axios.get(`${url}/post/1/comments`);
-        const modifiedData = data.map(comments => ({   
-           commentid:comments.commentId,
-           commentdesc:comments.comment,
-           commentuserid:comments.user
-        }));
-        return modifiedData;
+        const { data}  = await axios.get(`${url}/post/${id}/comments`);
+        
+        return data;
     } catch (error) {
         console.log(error);
     }
+}
+
+export const sendcomment=async(comment,pid)=>{
+    var commentdata = {
+      comment: comment,
+    };
+    console.log(commentdata);
+    try{
+        const res=await axios.post(`${url}/ballu_1/post/${pid}/comment/create`, commentdata)
+        console.log(res.data);
+        return true;
+    }
+    catch(err){
+        console.log("error")
+        return false;
+    }
+
+       
+    
 }

@@ -1,15 +1,22 @@
 .sam {
     background-color: grey;
 }
-
+.post_home_area{
+    display: none;
+    background-color: azure;
+    border: 2px solid black;
+    padding: 2%;
+    margin: 3% 0%;
+    width: 90%;
+}
 .post {
     border-radius: 25px;
     border: 2px solid rgb(255, 102, 0);
     padding: 20px;
-    width: 590px;
+
     height: auto;
     align-items: center;
-    margin: 1.5em 1em;
+    margin: 2% ; 
     box-shadow: 10px 10px rgba(145, 141, 141, 0.493);
 }
 
@@ -24,7 +31,6 @@ span.s1 {
     font-size: x-large;
 }
 
-div.s1 {}
 
 .post__left {
     width: 50px;
@@ -104,7 +110,7 @@ p.post__info {
     border: none;
     border-radius: 15px;
     box-shadow: 0 6px rgba(183, 191, 196, 0.959);
-    margin-left: 500px;
+    margin-left: 100%;
     margin-top: auto;
 }
 
