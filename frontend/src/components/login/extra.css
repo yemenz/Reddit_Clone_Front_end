@@ -1,0 +1,9 @@
+.right_login {
+    right: -40%;
+    align-items: flex-end;
+}
+
+.left_login {
+    right: 40%;
+    align-items: flex-start;
+}
