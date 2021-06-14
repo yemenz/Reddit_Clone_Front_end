@@ -17,7 +17,7 @@ class Navbar extends React.Component {
     }
     else{
           document.getElementById('login_signout').style.display = 'none';
-          document.getElementById('logoutbtn').style.display = 'block';
+          document.getElementById('logoutbtn').style.display = 'flex';
           //  document.getElementById('allposts').style.display = 'block';
             // document.getElementById('not_login').style.display = 'none';
     }
@@ -52,11 +52,11 @@ class Navbar extends React.Component {
           </Link>
         </div>
         <div className='Navbar_login_signup' id='logoutbtn'>
-          <button className='navbar_signup' onClick={this.handlelogout}>
+          <button className='navbar_lout' onClick={this.handlelogout}>
             Logout
           </button>
           <Link to='/post'>
-            <button className='navbar_login'>Create post</button>
+            <button className='navbar_cp'>Create post</button>
           </Link>
         </div>
       </div>

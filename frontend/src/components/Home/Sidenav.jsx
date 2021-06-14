@@ -11,8 +11,8 @@ class Sidenav extends React.Component {
           <h1 className='codemovement_text'>Guyz do follow us on Discord</h1>
           <button className='code_button'>Follow</button>
         </div>
-        <button className='contact_button'>Follow</button>
-        <button className='about_button'>Follow</button>
+        <button className='contact_button'>About us</button>
+        <button className='about_button'>Contact us</button>
 
         <div className='dev_area'>
           <div className='dev'>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { fetchcommentData, fetchData } from '../../api';
+import { fetchcommentData} from '../../api';
 
 class CommentArea extends React.Component{
 

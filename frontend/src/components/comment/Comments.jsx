@@ -38,7 +38,8 @@ class Comment extends React.Component {
     e.preventDefault();
     const comment = document.getElementById('comment_').value;
     const { postpostid } = this.state;
-    const cnt = await sendcomment(comment, postpostid);
+    const uid=sessionStorage.getItem("uid");
+    const cnt = await sendcomment(comment, postpostid,uid);
     console.log(cnt);
     if (cnt) {
       this.setState({ postpostid: postpostid });
@@ -80,10 +81,9 @@ class Comment extends React.Component {
                 placeholder='comment..'
                 name='comment'
                 id='comment_'
-                onChange={this.handledlecommentdata}
               />
               <div className='problem'>
-                <button className='submit007'>Comment</button>
+                <button type="submit" className='submit007'>Comment</button>
               </div>
             </form>
           </div>

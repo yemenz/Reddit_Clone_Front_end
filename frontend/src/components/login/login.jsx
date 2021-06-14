@@ -31,11 +31,10 @@ export class Login extends React.Component {
     axios.post(`${url}/user/signIn`,logindata)
     .then(res=>{
       console.log(res.data);
-       if (res.data === false) {
-         document.getElementById('registe_error').innerHTML =
-           'user not Found';
+       if (res.data === 'Not found') {
+         document.getElementById('l_error').innerHTML = 'user not Found';
        } else {
-         alert('user logind succesfully');
+         alert('User logged in succesfully');
          sessionStorage.setItem('uid', username);
          window.location = './';
        }
@@ -49,32 +48,48 @@ export class Login extends React.Component {
     
 
     return (
-      <div className={styles.base_container} >
+      <div className={styles.base_container}>
         <h1 className={styles.header}>Login</h1>
         <div className={styles.content}>
           <div className={styles.image}>
-            <img src={logo} alt="logo" className={styles.img} />
+            <img src={logo} alt='logo' className={styles.img} />
           </div>
           <form className={styles.form} onSubmit={this.submitlogindata}>
             <div className={styles.form_group}>
-              <label htmlFor="username" className={styles.label}>Username</label>
-              <input type="text" name="username" placeholder="username" onChange={this.handlechangedata} className={styles.input} />
+              <label htmlFor='username' className={styles.label}>
+                Username
+              </label>
+              <input
+                type='text'
+                name='username'
+                placeholder='username'
+                onChange={this.handlechangedata}
+                className={styles.input}
+              />
             </div>
             <div className={styles.form_group}>
-              <label htmlFor="password" className={styles.label}>Password</label>
-              <input type="password" name="password" placeholder="password"  onChange={this.handlechangedata} className={styles.input} />
+              <label htmlFor='password' className={styles.label}>
+                Password
+              </label>
+              <input
+                type='password'
+                name='password'
+                placeholder='password'
+                onChange={this.handlechangedata}
+                className={styles.input}
+              />
             </div>
-            <Button type="submit"
-        variant="contained"
-        color="secondary"
-        endIcon={<LockOpen></LockOpen>}
-        >Login</Button>
+            <h3 id='l_error'></h3>
+            <Button
+              type='submit'
+              variant='contained'
+              color='secondary'
+              endIcon={<LockOpen></LockOpen>}>
+              Login
+            </Button>
           </form>
-          
         </div>
       </div>
-      
-
     );
   }
 }

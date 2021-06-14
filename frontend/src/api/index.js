@@ -39,13 +39,13 @@ export const fetchcommentData = async(id) => {
     }
 }
 
-export const sendcomment=async(comment,pid)=>{
+export const sendcomment=async(comment,pid,uid)=>{
     var commentdata = {
       comment: comment,
     };
     console.log(commentdata);
     try{
-        const res=await axios.post(`${url}/ballu_1/post/${pid}/comment/create`, commentdata)
+        const res=await axios.post(`${url}/${uid}/post/${pid}/comment/create`, commentdata)
         console.log(res.data);
         return true;
     }

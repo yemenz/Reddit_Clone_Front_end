@@ -39,7 +39,7 @@ export class Register extends React.Component {
           document.getElementById('registe_error').innerHTML =
             'user not registred';
         } else {
-          alert('user registe succesfully');
+          alert('User registered succesfully');
           sessionStorage.setItem('uid', res.data);
           window.location = './';
         }

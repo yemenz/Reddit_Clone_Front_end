@@ -35,10 +35,11 @@
 }
 
 .Navbar_login_signup {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  align-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    align-content: center;
+    width: 10%;
 }
 
 .navbar_login {
@@ -48,7 +49,23 @@
   color: dodgerblue;
   border-radius: 60px;
 }
+.navbar_cp {
+    padding: 10% 60%;
+    margin: 15%;
+    border: 2px solid dodgerblue;
+    color: dodgerblue;
+    border-radius: 60px;
+
+}
 .navbar_signup {
+  padding: 10% 30%;
+  margin: 15%;
+  color: aliceblue;
+  border: 2px solid aliceblue;
+  background-color: dodgerblue;
+  border-radius: 60px;
+}
+.navbar_lout{
   padding: 10% 30%;
   margin: 15%;
   color: aliceblue;
