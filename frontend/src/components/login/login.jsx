@@ -79,7 +79,7 @@ export class Login extends React.Component {
                 className={styles.input}
               />
             </div>
-            <h3 id='l_error'></h3>
+            <h3></h3>
             <Button
               type='submit'
               variant='contained'
