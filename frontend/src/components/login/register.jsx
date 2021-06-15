@@ -117,7 +117,7 @@ export class Register extends React.Component {
                 className={styles.input}
               />
             </div>
-            <h3 id='registe_error'></h3>
+            <h3></h3>
             <Button
               type='submit'
               variant='contained'
