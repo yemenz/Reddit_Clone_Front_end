@@ -1,6 +1,6 @@
 import React from 'react';
 import { Codemovment,av1,av2 } from '../../images/index';
-import './Sidenav.css';
+import './SideNav.css';
 
 class Sidenav extends React.Component {
   render() {
